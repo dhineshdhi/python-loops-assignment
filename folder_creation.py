@@ -19,3 +19,12 @@ inventory.append(new_book)
 with open("inventory.json","w") as file:
     json.dump(inventory,file,indent=4)
 print("New book added! and Total number of books now is:",len(inventory))
+
+with open("inventory.json","r") as file:
+    updated_inventory= json.load(file)
+for book in updated_inventory:
+    print(
+        f"Title: {book['title']} | "
+        f"Author:{book['author']} | "
+        f"Price:{book['price']} "
+        )
